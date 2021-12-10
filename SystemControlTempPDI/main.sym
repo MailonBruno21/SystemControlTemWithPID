@@ -1,0 +1,183 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B-01C CCP_2
+01C     CCP_2_HIGH
+020-021 pontDist
+022-025 tempRef
+026-029 tempSens
+02A-02D erro
+02E-031 tempAnterior
+032-035 kp
+036-039 ki
+03A-03D kd
+03E-041 prop
+042-045 integ
+046-049 deriv
+04A-04D PID
+04E-051 timer
+052     @TRIS_C
+053-054 @PRINTF_LD_9600_62_63.P1
+053-056 @FLT.P2
+053-056 @PRINTF_L32D_9600_62_63FPFPF.P3
+053-056 inputReferencia.pontTempRef
+053-056 @SFTOI.P1
+053     lcd_ini.conta
+053-056 inputSensor.sensTemp
+053     pid_control.@SCRATCH1
+053     MAIN.@SCRATCH1
+054     lcd_ini.@SCRATCH1
+054     pid_control.@SCRATCH2
+054     MAIN.@SCRATCH2
+055     pid_control.@SCRATCH3
+055     MAIN.@SCRATCH3
+055     @PRINTF_LD_9600_62_63.@SCRATCH1
+056-059 @PRINTF_L32D_65FPFPF.P1
+056     pid_control.@SCRATCH4
+056     @PRINTF_LD_9600_62_63.@SCRATCH2
+057     @PRINTF_L32D_9600_62_63FPFPF.P1
+057-05A @FLT.P2
+057-05A @ADDFF.P3
+057     inputReferencia.@SCRATCH1
+057     inputSensor.@SCRATCH1
+057     @PRINTF_LD_9600_62_63.@SCRATCH3
+058     inputReferencia.@SCRATCH2
+058     inputSensor.@SCRATCH2
+058     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+058     @PRINTF_LD_9600_62_63.@SCRATCH4
+059-05C @DIVFF.P1
+059-05A @ITOF.P2
+059     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+059     @PRINTF_LD_9600_62_63.@SCRATCH5
+05A     @PRINTF_L32D_65FPFPF.P1
+05A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+05A     @PRINTF_LD_9600_62_63.@SCRATCH6
+05B-05E @ADDFF.P1
+05B     @FLT.@SCRATCH1
+05B     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+05B     @PRINTF_LD_9600_62_63.@SCRATCH7
+05B     @PRINTF_L32D_65FPFPF.@SCRATCH1
+05C     @FLT.@SCRATCH2
+05C     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+05C     @PRINTF_L32D_65FPFPF.@SCRATCH2
+05D-060 @DIVFF.P1
+05D     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+05D     @PRINTF_L32D_65FPFPF.@SCRATCH3
+05E     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+05E     @PRINTF_L32D_65FPFPF.@SCRATCH4
+05F     @ADDFF.@SCRATCH1
+05F     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+05F     @PRINTF_L32D_65FPFPF.@SCRATCH5
+060     @ADDFF.@SCRATCH2
+060     @PRINTF_L32D_65FPFPF.@SCRATCH6
+061     @ADDFF.@SCRATCH3
+061     @DIVFF.@SCRATCH1
+061     @PRINTF_L32D_65FPFPF.@SCRATCH7
+062     @ADDFF.@SCRATCH4
+062     @DIVFF.@SCRATCH2
+062     @PRINTF_L32D_65FPFPF.@SCRATCH8
+063-066 @FTOSD.P1
+063-066 @DIV3232.P2
+063     lcd_escreve.c
+063-066 @MULFF.P1
+063     @ADDFF.@SCRATCH5
+063     @DIVFF.@SCRATCH3
+064     lcd_pos_xy.x
+064     @delay_ms1.P1
+064     @ADDFF.@SCRATCH6
+064     @DIVFF.@SCRATCH4
+065     lcd_pos_xy.y
+065     @ADDFF.@SCRATCH7
+065     @DIVFF.@SCRATCH5
+066     lcd_pos_xy.endereco
+066     @ADDFF.@SCRATCH8
+066     @DIVFF.@SCRATCH6
+067-06A @DIV3232.P1
+067-06A @MULFF.P2
+067     lcd_pos_xy.@SCRATCH1
+067     @FTOSD.@SCRATCH1
+068     lcd_envia_byte.endereco
+069     lcd_envia_byte.dado
+06A     lcd_envia_byte.@SCRATCH1
+06B     lcd_envia_nibble.dado
+06B     @MULFF.@SCRATCH1
+06B     @DIV3232.@SCRATCH1
+06C     @MULFF.@SCRATCH2
+06C     @DIV3232.@SCRATCH2
+06D     @MULFF.@SCRATCH3
+06D     @DIV3232.@SCRATCH3
+06E     @MULFF.@SCRATCH4
+06E     @DIV3232.@SCRATCH4
+06F     @MULFF.@SCRATCH5
+06F     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0026  @delay_ms1
+0004  INI_LCD
+003A  lcd_envia_nibble
+0061  lcd_envia_byte
+0082  lcd_ini
+00D9  lcd_pos_xy
+00BF  lcd_escreve
+047D  pid_control
+033C  @ADDFF
+0114  @MULFF
+0556  @FLT
+0189  @SFTOI
+01A8  inputDisturbio
+00F7  @ITOF
+02C2  inputReferencia
+01F8  @DIVFF
+02FF  inputSensor
+08DA  MAIN
+05CD  @FTOSD
+05EC  @DIV3232
+062E  @PRINTF_L32D_9600_62_63FPFPF
+06FC  @PRINTF_LD_9600_62_63
+000C  @const120
+0800  @PRINTF_L32D_65FPFPF
+08DA  @cinit
+
+Project Directory:
+    C:\Users\pedri\Desktop\Trabalho 1\
+
+Project Files:
+    main.c
+    ..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+    mod_lcd.c
+
+Units:
+    C:\Users\pedri\Desktop\Trabalho 1\main.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.sta

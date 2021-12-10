@@ -1,0 +1,5 @@
+version,0,0,0:0.8.8
+scale,0,0,0:0.800000
+useAlias,0,0,0:0
+Potentiometers,377,10,0:2,3,0,0,130,0,0,0
+Temperature System,7,4,0:16,17,5,0

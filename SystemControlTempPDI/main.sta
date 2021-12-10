@@ -1,0 +1,69 @@
+
+ROM used: 2474 (30%)
+          2614 (32%) including unused fragments
+
+          4 Average locations per line
+          21 Average locations per statement
+
+RAM used: 60 (16%) at main() level
+          86 (23%) worst case
+
+Stack used: 4 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  152    48  40  main.c
+  313     0   0  ..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+  165    72  60  mod_lcd.c
+----- -----
+  630   120 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   1   1             @delay_ms1
+0      8   0   0             @const50
+0     39   2   1   260  1.9  lcd_envia_nibble
+0     33   1   3   176  2.7  lcd_envia_byte
+0     61   2   2   433  4.3  lcd_ini
+ Inline        4   186  5.5  lcd_pos_xy
+0     56   2   1   290  4.1  lcd_escreve
+0    336  14   4   348  4.7  pid_control
+0    321  13  16             @ADDFF
+0    117   5  13             @MULFF
+ Inline       10             @FLT
+0     31   1   4             @SFTOI
+0     80   3   0   138  2.1  inputDisturbio
+0     29   1   2             @ITOF
+0     61   2   6    98  2.3  inputReferencia
+0    202   8  14             @DIVFF
+0     61   2   6    98  2.3  inputSensor
+1    348  14   3   652  3.8  MAIN
+0     31   1   5             @FTOSD
+0     66   3  13             @DIV3232
+0    206   8  13             @PRINTF_L32D_9600_62_63FPFPF
+0    120   5   9             @PRINTF_LD_9600_62_63
+0     26   1   0             @const120
+1    218   9  13             @PRINTF_L32D_65FPFPF
+
+Program metrics:
+    Functions               10
+    Statements              120
+    Comments                124
+    Volume (V)              4340
+    Difficilty (D)          32.1
+    Effort to implement (E) 139154
+    Time to implement (T)   2 hours, 9 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   9
+    Maintainability (MI)    62
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1904  140  
+00800-00FFF   566  1482  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+
